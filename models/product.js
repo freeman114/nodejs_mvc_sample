@@ -28,6 +28,7 @@ module.exports = class Product {
   save() {
     this.id = Math.random().toString();
     getProductsFromFile(products => {
+      console.log(JSON.stringify(this));
       products.push(this);
       fs.writeFile(p, JSON.stringify(products), err => {
         console.log(err);
